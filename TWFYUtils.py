@@ -5,7 +5,7 @@ from System.Xml import XmlNodeType, XmlTextReader
 
 from os import path
 
-apiKeyFile = open(path.join(path.dirname(__file__), "apikey.txt"), "r")
+apiKeyFile = open(path.join(path.dirname(__file__), "twfy-apikey.txt"), "r")
 apiKey = apiKeyFile.readline()
 apiKeyFile.close()
 
