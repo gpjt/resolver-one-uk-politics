@@ -1,9 +1,7 @@
-from System.IO import StreamReader
-from System.Net import WebRequest
-from System.Xml import XmlNodeType, XmlTextReader
-
-
 from os import path
+
+from XMLAPIUtils import XMLAPIFunction
+
 
 apiKeyFile = open(path.join(path.dirname(__file__), "twfy-apikey.txt"), "r")
 apiKey = apiKeyFile.readline()
@@ -11,27 +9,10 @@ apiKeyFile.close()
 
 twfyURL = "http://www.theyworkforyou.com/api/%s?key=%s&output=xml" % ("%s", apiKey)
 
-class TWFYFunction(object):
+class TWFYFunction(XMLAPIFunction):
     def __init__(self, functionName):
-        self.url = twfyURL % functionName
-        
-    def getData(self):
-        print self.url
-        request = WebRequest.Create(self.url)
-        response = request.GetResponse()
-        try:
-            reader = XmlTextReader(StreamReader(response.GetResponseStream()))
-            while reader.Read():
-                if reader.NodeType == XmlNodeType.Element:
-                    self.start(reader.Name)
-                elif reader.NodeType == XmlNodeType.Text:
-                    self.text(reader.Value)
-                elif reader.NodeType == XmlNodeType.EndElement:
-                    self.end(reader.Name)            
-        finally:
-            response.Close()
-            
-        return self
+        XMLAPIFunction.__init__(self, twfyURL % functionName)
+
 
 
 class GetConstituencies(TWFYFunction):
