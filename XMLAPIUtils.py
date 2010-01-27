@@ -10,8 +10,8 @@ from System.Xml import XmlNodeType, XmlTextReader
 class XMLAPIFunction(object):
     def __init__(self, url):
         self.url = url
-        
-    def getData(self, extraParams={}, userName=None, password=None):
+
+    def getData(self, userName=None, password=None, extraParams={}):
         url = self.url
         if len(extraParams.items()) > 0:
             print "Adding ", extraParams, " onto ", url
@@ -31,8 +31,8 @@ class XMLAPIFunction(object):
                 elif reader.NodeType == XmlNodeType.Text:
                     self.text(reader.Value)
                 elif reader.NodeType == XmlNodeType.EndElement:
-                    self.end(reader.Name)            
+                    self.end(reader.Name)
         finally:
             response.Close()
-            
+
         return self
