@@ -1,7 +1,7 @@
 <!--
 This spreadsheet is copyright 2010, all rights reserved.
 -->
-<document currentResultWorksheet="Abandoned" verticalSplitterRatio="0.466583124478" horizontalSplitterRatio="0.616959064327" splitterOrientation="Vertical" suspendRecalculations="False" license="Closed source/proprietary" copyrightOwner="" resolverVersion="1.8" resolverBuild="5026" documentVersion="12">
+<document currentResultWorksheet="Combined IDs" verticalSplitterRatio="0.466583124478" horizontalSplitterRatio="0.616959064327" splitterOrientation="Vertical" suspendRecalculations="False" license="Closed source/proprietary" copyrightOwner="" resolverVersion="1.8" resolverBuild="5026" documentVersion="12">
     <foldState license="True" imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
     <traitDefaults>
 
@@ -314,9 +314,10 @@ workbook["Party Rankings"].E1.Click += ReloadPartyRankings
             <virtualGridSize width="29" height="70" />
         </viewState>
         <viewState worksheet="Combined IDs">
-            <currentCell col="8" row="125" />
-            <scrollPos col="1" row="97" />
-            <virtualGridSize width="28" height="165" />
+            <currentCell col="4" row="117" />
+            <selection left="4" top="117" right="4" bottom="124" />
+            <scrollPos col="1" row="101" />
+            <virtualGridSize width="28" height="169" />
         </viewState>
         <viewState worksheet="Twitter Stats">
             <currentCell col="8" row="62" />
